@@ -285,8 +285,6 @@ namespace Lundeen_LinkedListSearch
                 }
             }
             return nodes;
-            //// if there are no matches
-            //return null;
         }
     }
 }
