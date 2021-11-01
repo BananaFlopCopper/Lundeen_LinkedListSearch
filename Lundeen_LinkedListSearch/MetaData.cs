@@ -22,7 +22,7 @@ namespace Lundeen_LinkedListSearch
             Rank = rank;
         }
         public readonly char Gender;
-        public string Name;
+        public string Name { get; set; }
         public readonly int Rank;
 
         
@@ -67,6 +67,21 @@ namespace Lundeen_LinkedListSearch
             // least likely to occur, so end of if statement fortress is the best for performance
             return 0;
         }
-
+        public bool NameMatch(string name)
+        {
+            // suffix would otherwise make compare to worthless on duplicates
+            string ThisName = this.Name.ToLower();
+            name = name.ToLower();
+            if (ThisName.Contains("_"))
+            {
+                int temp = ThisName.IndexOf("_");
+                ThisName = ThisName.Remove(temp, ThisName.Length - temp);
+            }
+            if(name == ThisName)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

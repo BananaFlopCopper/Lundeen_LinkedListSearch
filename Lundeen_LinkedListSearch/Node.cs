@@ -11,8 +11,9 @@ namespace Lundeen_LinkedListSearch
         public Node (MetaData metaData)
         { MetaData = metaData; }
 
-        public Node Next;
-        public Node Previous;
+        public Node Next { get; set; }
+        public Node Previous { get; set; }
+
         public readonly MetaData MetaData;
     }
 }

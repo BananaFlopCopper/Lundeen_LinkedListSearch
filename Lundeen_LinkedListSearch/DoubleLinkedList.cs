@@ -263,20 +263,19 @@ namespace Lundeen_LinkedListSearch
                     Node Current = _alphabetIndexes[index].Start;
                     while (Current != _alphabetIndexes[index].End)
                     {
-                        if(Current.MetaData.Name.ToLower() == name.ToLower())
+                        if(Current.MetaData.NameMatch(name))
                         {
                             nodes.Add(Current);
                         }
                         Current = Current.Next;
                     }
                 }
-
                 else
                 {// start from back
                     Node Current = _alphabetIndexes[index].End;
                     while (Current != _alphabetIndexes[index].Start)
                     {
-                        if (Current.MetaData.Name.ToLower() == name.ToLower())
+                        if (Current.MetaData.NameMatch(name))
                         {
                             nodes.Add(Current);
                         }

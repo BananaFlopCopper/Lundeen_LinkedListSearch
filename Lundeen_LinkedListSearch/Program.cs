@@ -35,14 +35,14 @@ namespace Lundeen_LinkedListSearch
                         string name = "";
                         while(name == null || name == "")
                         {
-                            Console.WriteLine("Enter a name to search for: ");
+                            Console.WriteLine("Enter a name to search for: \n");
                             name = Console.ReadLine();
                             Console.Clear();
                             if(name.Length < 2)
                             { name = ""; }
                         }
                         List<Node> Persons = DoubleLinkedList.Search(name);
-                        if(Persons != null)
+                        if(Persons.Count != 0)
                         {
                             for (int i = 0; i < Persons.Count; i++)
                             {
@@ -52,7 +52,7 @@ namespace Lundeen_LinkedListSearch
                             Console.Clear();
                         } else
                         {
-                            Console.WriteLine("Name Could not be found.");
+                            Console.WriteLine("Name Could not be found.\n");
                             Console.ReadLine();
                             Console.Clear();
                         }
@@ -76,7 +76,7 @@ namespace Lundeen_LinkedListSearch
                             }
                             else
                             {
-                                Console.WriteLine( "There is no most popular male name.");
+                                Console.WriteLine( "There is no most popular male name.\n");
                             }
                             if(DoubleLinkedList.MostPopularFemaleName != null)
                             {
@@ -85,7 +85,7 @@ namespace Lundeen_LinkedListSearch
                             }
                             else
                             {
-                                Console.WriteLine("There is no most popular female name.");
+                                Console.WriteLine("There is no most popular female name.\n");
                             }
                             
                             
@@ -101,20 +101,18 @@ namespace Lundeen_LinkedListSearch
                         string preRank = "";
                         int rank = -1;
                         while (NewName.Length < 2) {
-                            Console.WriteLine("Enter a name: ");
-                            Console.WriteLine("\n");
+                            Console.WriteLine("Enter a name: \n");
                             NewName = Console.ReadLine();
                             Console.Clear();
                         }
                         while (!gender.Contains('m') && !gender.Contains('f'))
                         {
-                            Console.WriteLine("Enter a Gender (m/f -> Male/Female): ");
+                            Console.WriteLine("Enter a Gender (m/f -> Male/Female): \n");
                             gender = Console.ReadLine();
-                            Console.WriteLine("\n");
                             Console.Clear();
                         }
                         while (rank <= 0) {
-                            Console.WriteLine("Enter a Rank: ");
+                            Console.WriteLine("Enter a Rank: \n");
                             preRank = Console.ReadLine();
                             if(preRank.Length < int.MaxValue.ToString().Length)
                             {
@@ -124,12 +122,12 @@ namespace Lundeen_LinkedListSearch
                                 }
                                 catch (FormatException)
                                 {
-                                    Console.WriteLine("Line is not only numbers. Press any key to retry");
+                                    Console.WriteLine("Line is not only numbers. Press any key to retry\n");
                                     Console.ReadLine();
                                 }
                             } else
                             {
-                                Console.WriteLine("Line contains too many characters. Press any key to retry");
+                                Console.WriteLine("Line contains too many characters. Press any key to retry\n");
                                 Console.ReadLine();
                             }
                             
